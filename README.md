@@ -7,7 +7,7 @@ Data used in git exemple are simulated.
 ### packages needed 
 
 
-'''
+```
 library(shiny)
 library(ggplot2)
 library(shinyWidgets)
@@ -19,7 +19,7 @@ library(tidyr)
 library(dplyr)
 library(SGSeq) \# not needed for exemple
 library(GenomicFeatures) \# not needed for exemple
-'''
+```
 
 
 ### Alternative splicing analysis tab
