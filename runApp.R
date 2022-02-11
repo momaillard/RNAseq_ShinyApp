@@ -30,7 +30,7 @@ imgsize <- "auto 40%"
 img <- 'http://northerntechmap.com/assets/img/loading-dog.gif'
 
 ###############################
-#####   Resume des data   #####
+#####   Resume of data    #####
 ###############################
 
 source(file = "src/source2App.R")
@@ -205,7 +205,7 @@ ui <- dashboardPage(skin = "red",
                 fluidRow(
                     box(width = 6, status = "danger", title = "Alternative splicing by SGSseq", solidHeader = TRUE,
                         h5("Select a or several growth conditions and a gene ID (ex : 'Gene_3')"),
-                        pickerInput("SGS_condition", "Pick your Sample conditions", multiple = TRUE, choices = levels(as.factor(si$condition)), 
+                        pickerInput("SGS_condition", "Pick your Sample conditions", multiple = TRUE, choices = c("Sample1","Sample2"), 
                                     options = list(`actions-box` = TRUE, "max-options" = 89)                           
                         ),
                         numericInput("minFPKM", "Minimum FPKM required for a splice junction to be included", value = 2, min = 0.5, max = 10, step = 0.5),
@@ -249,7 +249,7 @@ server <- function(input, output, session) {
 
 
     #############################################################
-    ################        PROFIL EXPRESSION       #############
+    ################        EXPRESSION PROFIL       #############
     #############################################################
 
     valeurs <- reactive({
@@ -262,7 +262,7 @@ server <- function(input, output, session) {
 
     output$plotBoxplot <- renderPlot({
         validate(
-            need(input$geneName %in% colnames(GittNormCount), "Entrez un nom de gène valide (ref=AGPV4) ou gène non detecté dans samples")
+            need(input$geneName %in% colnames(GittNormCount), "Enter a valid Gene name")
         )
         qplot(data = GittNormCount, y = GittNormCount[,valeurs()], x = Temps, fill = Stress,
               geom = c("boxplot","point"), xlab = "Stade", ylab = "Deseq2 normalized Count",
@@ -274,7 +274,7 @@ server <- function(input, output, session) {
 
     output$plotTPMBoxplot <- renderPlot({
         validate(
-            need(input$geneName %in% colnames(GitTPMV1toAPP), "Entrez un nom de gène valide (ref=AGPV4) ou gène non detecté dans samples")
+            need(input$geneName %in% colnames(GitTPMV1toAPP), "Enter a valid Gene name")
         )
         qplot(data = GitTPMV1toAPP, y = GitTPMV1toAPP[,valeursTPM()], x = Temps, fill = Stress,
               geom = c("boxplot","point"), xlab = "Stade", ylab = "TPM",
@@ -338,7 +338,7 @@ server <- function(input, output, session) {
         }
         else {
             validate( 
-                need(myClickGO_button01$GeneList %in% rownames(GittpmFinal), "Entrez un nom de gène valide (ref=AGPV4 12X0) ou gène non detecté dans samples")
+                need(myClickGO_button01$GeneList %in% rownames(GittpmFinal), "Enter a valid Gene name")
         )
             Tdata <- t(GittpmFinal)
             dataSelect <- data.frame(Tdata [myClickGO_button01$Sample,myClickGO_button01$GeneList], myClickGO_button01$GeneList)
@@ -391,7 +391,7 @@ server <- function(input, output, session) {
     
     output$matriceToDL <- DT::renderDataTable({
         validate(
-                need(myClickactionB_subsetMat$GeneList %in% colnames(GitTPMV1toAPP), "Entrez un nom de gène valide (ref=AGPV4 12X0) ")
+                need(myClickactionB_subsetMat$GeneList %in% colnames(GitTPMV1toAPP), "Enter a valid Gene name")
         )
         DT::datatable(toDownloadTPM())
     })
@@ -427,7 +427,7 @@ server <- function(input, output, session) {
 
     output$matriceDeseqToDL <- DT::renderDataTable({
         validate(
-                need(myClickactionB_Deseq$GeneList %in% colnames(GittNormCount), "Entrez un nom de gène valide (ref=AGPV4 12X0) ")
+                need(myClickactionB_Deseq$GeneList %in% colnames(GittNormCount), "EEnter a valid Gene name ")
         )
         DT::datatable(toDownloadDeseqMat())
     })
@@ -479,7 +479,7 @@ server <- function(input, output, session) {
     )
 
     ################################################################
-    #####           COMPARAISON GENES START       ##################
+    ############          COMPARAISON GENES START       ############
     ################################################################
 
     ######## comparaison gène avec trois polot (norm From Deseq2, VSD from deseq2 et VSD centrées) ##########
@@ -498,7 +498,7 @@ server <- function(input, output, session) {
         }
        else {
             validate( # permet de checker si les conditions sont remplies (ici si le "gene en input" fait partie des gènes étudiés
-                need(myClickGO_buttonBiplot$GeneListBi %in% colnames(GittNormCount), "Entrez un nom de gène valide (ref=AGPV4) ou gène non detecté dans samples")
+                need(myClickGO_buttonBiplot$GeneListBi %in% colnames(GittNormCount), "Enter valid Gene names")
             )
             selectedCol <- c(myClickGO_buttonBiplot$GeneListBi,"Stress","Temps","RepBio")
             selectedGene <- myClickGO_buttonBiplot$GeneListBi
@@ -529,7 +529,7 @@ server <- function(input, output, session) {
         }
        else {
             validate( 
-                need(myClickGO_buttonBiplot$GeneListBi %in% colnames(GittVSD2App), "Entrez un nom de gène valide (ref=AGPV4) ou gène non detecté dans samples")
+                need(myClickGO_buttonBiplot$GeneListBi %in% colnames(GittVSD2App), "Enter valid Gene names")
             )
             selectedCol <- c(myClickGO_buttonBiplot$GeneListBi,"Stress","Temps","RepBio")
             selectedGene <- myClickGO_buttonBiplot$GeneListBi
@@ -556,7 +556,7 @@ server <- function(input, output, session) {
         }
        else {
             validate( 
-                need(myClickGO_buttonBiplot$GeneListBi %in% colnames(Git.vsd.center.scale2App), "Entrez un nom de gène valide (ref=AGPV4) ou gène non detecté dans samples")
+                need(myClickGO_buttonBiplot$GeneListBi %in% colnames(Git.vsd.center.scale2App), "Enter valid genes names")
             )
             selectedCol <- c(myClickGO_buttonBiplot$GeneListBi,"Stress","Temps","RepBio")
             selectedGene <- myClickGO_buttonBiplot$GeneListBi
@@ -579,7 +579,7 @@ server <- function(input, output, session) {
    })
 
    #####################################################################
-   ############### PLOT TPM comparaison de gènes #######################
+   ##########         PLOT TPM , GENE COMPARAISON           ############
    #####################################################################
     myClickGO_buttonBiplotTPM <- reactiveValues()
     
@@ -595,7 +595,7 @@ server <- function(input, output, session) {
         }
        else {
             validate(
-                need(myClickGO_buttonBiplotTPM$GeneListBi %in% colnames(GitTPMV1toAPP), "Entrez un nom de gène valide (ref=AGPV4) ou gène non detecté dans samples")
+                need(myClickGO_buttonBiplotTPM$GeneListBi %in% colnames(GitTPMV1toAPP), "Enter valid Gene names")
             )
             selectedCol <- c(myClickGO_buttonBiplotTPM$GeneListBi,"Stress","Temps","RepBio")
             selectedGene <- myClickGO_buttonBiplotTPM$GeneListBi
@@ -620,7 +620,7 @@ server <- function(input, output, session) {
    })
 
     ###################################################################################
-    ##########               alternative splicing PART: SGSeq                ##########
+    ##########              ALTERNATIVE SPLICING PART / SGSESQ               ##########
     ###################################################################################
 
     myClickGO_buttonSGS <- reactiveValues()

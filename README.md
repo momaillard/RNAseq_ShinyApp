@@ -38,7 +38,7 @@ Screen shots presented here show outputs of this tool on an exemple.
 **img1** : detection and quantification of alternative splicing in our samples. 
 <img src="/img/Screen1_SGSTab.png" width="500">
 
-**img2** : frequencies of variant detected in all sample + informations concerning the reference and new variants detected (size, splicing event type, predicted protein ...) + plot of the variants frequencies
+**img2** : frequencies of variants detected in our samples + informations concerning reference and new variants detected (size, splicing event type, predicted protein ...) + plot of the variants frequencies
 
 <img src="/img/Screen2_SGSTab.png" width="500">
 
