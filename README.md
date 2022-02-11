@@ -34,5 +34,7 @@ It represents an implementation of SGSeq packages in a shiny App : Detection and
 
 
 > Goldstein *et al*. Prediction and Quantification of Splice Events from RNA-Seq Data. PLoS ONE 2016, 11, e0156132, doi:10.1371/journal.pone.0156132.
+
+
 contact : morganmaillard92@gmail.com
 
