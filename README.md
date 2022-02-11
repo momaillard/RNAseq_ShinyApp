@@ -1,10 +1,11 @@
 # Shiny App for RNAseq Data Visualization
 
 Purpose of this git is to present a part of my work, and the power of shiny R tool.
-The shiny App code presented here are a sample of the original on Data used here a simulated or randomly chosen
+The shiny App code presented here are a sample of the original one. Data used here for presentation are either simulated or randomly chosen.
 
 
-the Original App was built for Parasol ANR, in Kaliphruit team at B&PMP (new IPSIM), Montpellier, France 
+The Original App was built for Parasol ANR, in Kaliphruit team at B&PMP (new IPSIM), Montpellier, France.
+ 
 I developped this shiny App to allow RNAseq visualization for **non R-users** of an hundred samples RNAseq project. 
 
 
@@ -32,12 +33,13 @@ library(GenomicFeatures) \# not needed for exemple
 This tab in this exemple isn't functionnal in this exemple as it needs bam files as inputs. 
 It represents an implementation of SGSeq packages in a shiny App : Detection and quantification of alternative splicing.
 
-Screen shots presented here present outputs of this tool.
+Screen shots presented here show outputs of this tool on an exemple.
 
 **img1** : detection and quantification of alternative splicing in our samples. 
 <img src="/img/Screen1_SGSTab.png" width="500">
 
 **img2** : frequencies of variant detected in all sample + informations concerning the reference and new variants detected (size, splicing event type, predicted protein ...) + plot of the variants frequencies
+
 <img src="/img/Screen2_SGSTab.png" width="500">
 
 
