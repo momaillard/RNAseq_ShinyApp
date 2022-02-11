@@ -14,9 +14,9 @@ library(shinyWidgets)
 library(shinydashboard)
 library(DT)
 library(pheatmap)
-library(shinycssloaders)
 library(tidyr)
 library(dplyr)
+library(shinyBS)
 library(SGSeq) \# not needed for exemple
 library(GenomicFeatures) \# not needed for exemple
 ```
@@ -24,7 +24,7 @@ library(GenomicFeatures) \# not needed for exemple
 
 ### Alternative splicing analysis tab
 
-This subItem in this exemple isn't functionnal as he need bam files as inputs. 
+This tab in this exemple isn't functionnal as he need bam files as inputs. 
 It represents an implementation of SGSeq packages in a shiny App : Detection and quantification of alternative splicing.
 
 
