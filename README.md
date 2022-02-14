@@ -6,7 +6,7 @@ The shiny App code presented here is a part of the original one. Data used here 
 
 The original App was built for Parasol ANR, in Kaliphruit team at B&PMP (new IPSIM), Montpellier, France.
  
-I developped this shiny App to allow RNAseq visualization for **non R-users** from a grapevine project with an hundred samples RNAseq. 
+I developped this shiny App to make RNAseq visualization easy for **non R-users**. This app was created for a grapevine project with an hundred samples RNAseq.
 
 ## Gene Expression pattern
 
@@ -24,22 +24,6 @@ Just enter a gene ID and click on the button !
 **img1** : Visualization of gene expression patterns
 <img src ="/img/ScreenShot_tab1.png" width="750" > 
 
-
-## TPM normalisation
-
-TPM (transcript per million) is a "within sample" normalization method. Some studies tends to consider that this units shouldn't be use for "between samples" comparaison. **[2:4]**
-This Tab allows user to compare different transcripts abundance in a single sample. 
-
-**img2** : exemple of TPM comparaison between 3 genes in chosen sample
-<img src ="/img/ScreenShot_tab2.png" width="750" > 
-
-## Heatmap ###
-
-This tab produce heatmap expression of a list of given genes. Heatmap is a commonly used plot for RNAseq as it allows the visualization of cluster of genes with common expression patterns
-
-**img3** : heatmap expression of a given gene list. We can easily distinguish early response genes versus late response genes
-<img src ="/img/ScreenShot_tabHMmap.png" width="750" > 
-
 ## Alternative splicing analysis tab
 
 This tab isn't functionnal in this exemple as it needs bam files as inputs. 
@@ -47,18 +31,33 @@ It represents an implementation of SGSeq R packages **[5]** in a shiny App : Det
 
 Screen shots presented here show outputs of this tool on an exemple.
 
-**img3** : detection and quantification of alternative splicing in our samples. 
+**img2** : detection and quantification of alternative splicing in our samples. 
 <img src="/img/Screen1_SGSTab.png" width="750">
 
-**img4** : frequencies of variants detected in our samples + informations concerning reference and new variants detected (size, splicing event type, predicted protein ...) + plot of the variants frequencies
+**img3** : frequencies of variants detected in our samples + informations concerning reference and new variants detected (size, splicing event type, predicted protein ...) + plot of the variants frequencies
 <img src="/img/Screen2_SGSTab.png" width="750">
+
+## TPM normalisation
+
+TPM (transcript per million) is a "within sample" normalization method. Some studies tends to consider that this units shouldn't be use for "between samples" comparaison. **[2:4]**
+This Tab allows user to compare different transcripts abundance in a single sample. 
+
+**img4** : exemple of TPM comparaison between 3 genes in chosen sample
+<img src ="/img/ScreenShot_tab2.png" width="750" > 
+
+## Heatmap ###
+
+This tab produce heatmap expression of a list of given genes. Heatmap is a commonly used plot for RNAseq as it allows the visualization of cluster of genes with common expression patterns
+
+**img5** : heatmap expression of a given exemple gene list. Here We can easily distinguish early response genes versus late response genes
+<img src ="/img/ScreenShot_tabHMmap.png" width="750" > 
 
 ## Downloading expression matrix
 
 This tab is used to download expression matrix of given genes
 
-**img5** : exemple of expression matrice that are print and can be downloaded
-<img src ="ScreenShot_tabDownload.png" width="750"> 
+**img6** : exemple of expression matrice that are print and can be downloaded
+<img src ="/img/ScreenShot_tabDownload.png" width="750"> 
 
 ## packages needed 
 
