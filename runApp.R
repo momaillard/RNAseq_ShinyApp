@@ -42,15 +42,15 @@ ui <- dashboardPage(skin = "red",
     dashboardHeader(title = "SweetK"),
     dashboardSidebar(
         sidebarMenu(id = "tabs",
-            menuItem("expression Plot", tabName = "expressionPlot", icon = icon("chart-line")),
-            menuItem("TPM normalisation", tabName = "TPM_norm", icon = icon("balance-scale"),
-                menuSubItem("TPM View", tabName = "TPM_expression", icon = icon("balance-scale"))
-            ),
+            menuItem("Expression Plot", tabName = "expressionPlot", icon = icon("chart-line")),
+            menuItem("TPM normalisation", tabName = "TPM_expression", icon = icon("balance-scale")),
             menuItem("Download Expression Matrix", tabName = "downloadTab", icon = icon("file-download")),
             menuItem("SOM View", tabName = "SomClustering", icon = icon("layer-group")),
             menuItem("Expression heatmap", tabName = "heatmapExpression", icon = icon("buromobelexperte")),
-            menuItem("comparaison de gènes", tabName = "expressionBiplot", icon = icon("list-ol")),
-            menuItem("comparaison de gènes TPM", tabName = "expressionBiplotTPM", icon = icon("list-ol")),
+            menuItem("Gene pattern Comparaison", tabName = "geneComp", icon = icon("list-ol"),
+                menuSubItem("Gene comparaison Deseq2", tabName = "expressionBiplot", icon = icon("list-ol")),
+                menuSubItem("Gene comparaison TPM", tabName = "expressionBiplotTPM", icon = icon("list-ol"))
+            ),
             menuItem("Alternative_Splicing", tabName = "SGS_tab", icon = icon("cut"))
         )
     ),
