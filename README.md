@@ -27,10 +27,10 @@ Just enter a gene ID and click on the button !
 
 ### TPM normalisation ###
 
-TPM (transcript per million) is a "within sample" normalization method. Some studies tends to consider that this units shouldn't be use for "between samples" comparaison. [2:4]
-This Tab allows user to comparare different transcripts abundance in a single sample. 
+TPM (transcript per million) is a "within sample" normalization method. Some studies tends to consider that this units shouldn't be use for "between samples" comparaison. **[2:4]**
+This Tab allows user to compare different transcripts abundance in a single sample. 
 
-<img src ="/img/ScreenShot_tab2.png" width="500" > 
+<img src ="/img/ScreenShot_tab2.png" width="750" > 
 
 ### Alternative splicing analysis tab
 
@@ -40,10 +40,10 @@ It represents an implementation of SGSeq R packages **[5]** in a shiny App : Det
 Screen shots presented here show outputs of this tool on an exemple.
 
 **img3** : detection and quantification of alternative splicing in our samples. 
-<img src="/img/Screen1_SGSTab.png" width="500">
+<img src="/img/Screen1_SGSTab.png" width="750">
 
 **img4** : frequencies of variants detected in our samples + informations concerning reference and new variants detected (size, splicing event type, predicted protein ...) + plot of the variants frequencies
-<img src="/img/Screen2_SGSTab.png" width="500">
+<img src="/img/Screen2_SGSTab.png" width="750">
 
 
 ### packages needed 
