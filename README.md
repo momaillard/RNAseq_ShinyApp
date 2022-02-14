@@ -8,7 +8,7 @@ The original App was built for Parasol ANR, in Kaliphruit team at B&PMP (new IPS
  
 I developped this shiny App to allow RNAseq visualization for **non R-users** from a grapevine project with an hundred samples RNAseq. 
 
-### Gene Expression pattern ###
+### Gene Expression pattern
 
 This tab allows user to easily plot gene expression pattern. two different types of normalization are plot here : DEseq2 **[1]**  and TPM **[2]**
 
@@ -25,12 +25,20 @@ Just enter a gene ID and click on the button !
 <img src ="/img/ScreenShot_tab1.png" width="750" > 
 
 
-### TPM normalisation ###
+### TPM normalisation
 
 TPM (transcript per million) is a "within sample" normalization method. Some studies tends to consider that this units shouldn't be use for "between samples" comparaison. **[2:4]**
 This Tab allows user to compare different transcripts abundance in a single sample. 
 
+**img2** : exemple of TPM comparaison between 3 genes in chosen sample
 <img src ="/img/ScreenShot_tab2.png" width="750" > 
+
+### Heatmap ###
+
+This tab produce heatmap expression of a list of given genes. Heatmap is a commonly used plot for RNAseq as it allows the visualization of cluster of genes with common expression patterns
+
+**img3** : heatmap expression of a given gene list. We can easily distinguish early response genes versus late response genes
+<img src ="/img/ScreenShot_tabHMmap.png" width="750" > 
 
 ### Alternative splicing analysis tab
 
@@ -63,7 +71,7 @@ library(SGSeq) \# not needed for exemple
 library(GenomicFeatures) \# not needed for exemple
 ```
 
-
+### Bibliography
 > 1. Love, M.I.; Huber, W.; Anders, S. Moderated Estimation of Fold Change and Dispersion for RNA-Seq Data with DESeq2. Genome Biol **2014**, 15, 550, doi:10.1186/s13059-014-0550-8.
 > 2. Wagner, G. P., Kin, K., & Lynch, V. J. Measurement of mRNA abundance using RNA-seq data: RPKM measure is inconsistent among samples. Theory in biosciences, **2012**, 131(4), 281-285.
 > 3. Zhao, Y.; Li, M.-C.; Konaté, M.M.; Chen, L.; Das, B.; Karlovich, C.; Williams, P.M.; Evrard, Y.A.; Doroshow, J.H.; McShane, L.M. TPM, FPKM, or Normalized Counts? A Comparative Study of Quantification Measures for the Analysis of RNA-Seq Data from the NCI Patient-Derived Models Repository. J Transl Med **2021**, 19, 269, doi:10.1186/s12967-021-02936-w.
