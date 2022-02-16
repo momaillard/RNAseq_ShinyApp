@@ -1,4 +1,4 @@
-# Shiny App for RNAseq Data Visualization
+# Shiny App for RNAseq Visualization
 
 The purpose of this git is to present a part of my work and the power of shiny R tool.
 The shiny App code presented here is a part of the original one. Data used here for presentation are either simulated or randomly chosen. Gene names available for this exemple go from gene_1 to gene_16
@@ -6,7 +6,7 @@ The shiny App code presented here is a part of the original one. Data used here 
 
 The original App was built for Parasol ANR, in Kaliphruit team at B&PMP (new IPSIM), Montpellier, France.
  
-I developped this shiny App to make RNAseq visualization easy for **non R-users**. This app was created for a grapevine project with an hundred samples RNAseq.
+I developped this shiny App to make RNAseq visualization easy for **non R-users**. This app was created for a grapevine project with an hundred samples.
 
 ## Gene Expression pattern
 
