@@ -32,9 +32,11 @@ img <- 'http://northerntechmap.com/assets/img/loading-dog.gif'
 ###############################
 #####   Resume of data    #####
 ###############################
+myURL <- "https://github.com/momaillard/RNAseq_ShinyApp/raw/master/data/dataForApp.RData"
+load(url(myURL))
 
 source(file = "src/source2App.R")
-load(file = "./data/dataForApp.RData")
+#load(file = "./data/dataForApp.RData")
 #si <- read.csv2("data/siFromGetBamInfo.csv", header = TRUE, row.names = 1) # si file for alterntive splicing
 
 

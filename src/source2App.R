@@ -1,20 +1,20 @@
-getHeatmapTargetByGL <- function(liste, cutRow){ #non reproductible besoin de mes fichiers exacts
+getHeatmapTargetByGL <- function(liste, cutRow, mymatrix, colData){ #non reproductible besoin de mes fichiers exacts
     tmpvector <- strsplit(liste, ";")
     geneSelect <- as.vector(tmpvector[[1]])
 
     redgreen <- c("blue","black","yellow") 
     paletteLength <-256
     pal <- colorRampPalette(redgreen)(paletteLength)
-    VSTselect <- Git.tVSD.center.scaled[,geneSelect]
-    myOrder <- rownames(orderedColdataLight)
+    VSTselect <- mymatrix[,geneSelect]
+    myOrder <- rownames(colData)
     VSTselect <- VSTselect [myOrder,]
-    orderedColdataLight$Temps <- factor(orderedColdataLight$Temps,
+    colData$Temps <- factor(colData$Temps,
         levels = c("PRE","GrB","ColB","V4","V8","V12","V16","V20","V24","V28","V32","V36","V40","V44","V48","V52","V56","V60"))
     myBreaks <- c(seq(min(VSTselect), 0, length.out = ceiling(paletteLength/2) + 1), 
                   seq(max(VSTselect)/paletteLength, max(VSTselect), length.out = floor(paletteLength/2)))
     output <- pheatmap(t(VSTselect), show_rownames = TRUE,
              show_colnames = FALSE, cluster_cols = FALSE,
-             col = pal, GitAnnotation_col = orderedColdataLight, breaks = myBreaks, cutree_rows = cutRow)  
+             col = pal, GitAnnotation_col = colData, breaks = myBreaks, cutree_rows = cutRow)  
     return(output)
 }
 
