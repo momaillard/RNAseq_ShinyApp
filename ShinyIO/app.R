@@ -36,6 +36,7 @@ myURL <- "https://github.com/momaillard/RNAseq_ShinyApp/raw/master/data/dataForA
 load(url(myURL))
 mySrcURL <- "https://github.com/momaillard/RNAseq_ShinyApp/raw/master/src/source2App.R"
 source(file = mySrcURL)
+
 #load(file = "./data/dataForApp.RData")
 #si <- read.csv2("data/siFromGetBamInfo.csv", header = TRUE, row.names = 1) # si file for alterntive splicing
 
