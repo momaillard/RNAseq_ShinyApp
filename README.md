@@ -8,6 +8,7 @@ The original App was built for Parasol ANR, in Kaliphruit team at B&PMP (new IPS
  
 I developped this shiny App to make RNAseq visualization easy for **non R-users**. This app was created for a grapevine project with an hundred samples.
 
+For people who doesn't want to download R and associated packages, this app is available for testing at **https://momaillard.shinyapps.io/ShinyIO/**
 ## Gene Expression pattern
 
 This tab allows user to easily plot gene expression pattern. two different types of normalization are plot here : DEseq2 **[1]**  and TPM **[2]**
