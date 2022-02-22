@@ -12,7 +12,7 @@ You can launch this app with Rstudio by using the ***runGitHub()*** function lik
 
 ```
 library(shiny)
-runGitHub("RNAseq_ShinyApp" , "momaillard")
+runGitHub("RNAseq_ShinyApp","momaillard")
 ```
 
 For people who doesn't want to download R and associated packages, this app is available for testing at **https://momaillard.shinyapps.io/ShinyIO/**
