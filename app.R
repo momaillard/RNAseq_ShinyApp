@@ -632,12 +632,6 @@ server <- function(input, output, session) {
         myClickGO_buttonSGS$TXview <- input$addTXView
         myClickGO_buttonSGS$alpha <- input$minFPKM
         myClickGO_buttonSGS$min_n_sample <- input$minSample
-        print(myClickGO_buttonSGS$conditions)
-        str(myClickGO_buttonSGS$conditions)
-        print(myClickGO_buttonSGS$gene)
-        str(myClickGO_buttonSGS$gene)
-        print(myClickGO_buttonSGS$alpha)
-        print(myClickGO_buttonSGS$min_n_sample)
     })
 
 
